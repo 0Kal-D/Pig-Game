@@ -1,0 +1,226 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-transform: uppercase;
+    font-family: sans-serif;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to top left, #763681, #be2e35);
+
+}
+
+main {
+    padding: 2rem;
+    width: 90vw;
+    height: 86vh;
+    display: flex;
+}
+
+.player_winner {
+    background-color: #2f2f2f;
+    color: #be2a51;
+}
+
+
+.player {
+    padding: 10vh 0;
+    width: 50%;
+    height: 100%;
+    text-align: center;
+    background-color: #c3aaaba2;
+    transition-duration: .75s;
+
+
+}
+
+.player h2 {
+    margin: 2vh;
+    font-size: 2.6rem;
+    font-weight: 500;
+    color: #2f2f2f;
+}
+
+.player--0 {
+    border-radius: 10px 0 0 10px;
+}
+
+.player--1 {
+    border-radius: 0 10px 10px 0;
+}
+
+.player_active {
+    background-color: #ebcaccd4;
+
+}
+
+.player_active h2 {
+    font-weight: 600;
+}
+
+
+.player h1 {
+    margin-top: 4vh;
+    font-size: 4rem;
+    font-weight: 500;
+    color: #be2a51;
+}
+
+.player section {
+    margin: 30% auto;
+    padding: .8rem 0;
+    width: 12rem;
+    max-height: 6.4rem;
+    border-radius: 10px;
+    background-color: #c7365f;
+}
+
+.player section p,
+.player section h2 {
+    color: whitesmoke;
+    font-weight: 400;
+}
+
+
+.btncontrol {
+    position: absolute;
+    padding: 6vh 0;
+    display: flex;
+    flex-direction: column;
+    left: calc(50% - 100px);
+    top: 10vh;
+    height: 80vh;
+    width: 200px;
+}
+
+.btncontrol img {
+    margin: 12vh;
+    width: 90px;
+    align-self: center;
+    border-radius: 5px;
+}
+
+.btncontrol button {
+    margin: 2vh auto;
+    padding: .8rem 1.8rem;
+    transform: translateX(-2%);
+    width: fit-content;
+    height: 2.4rem;
+    border-radius: 30px;
+    font-size: 1.2rem;
+    line-height: 0;
+    font-weight: 500;
+    color: #2f2f2f;
+    background-color: whitesmoke;
+    border: none;
+    transition-duration: all .2s;
+}
+
+.btncontrol button:active {
+    transform: translate(-2%, 1px);
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
+}
+
+.btncontrol button:hover {
+    cursor: pointer;
+}
+
+.btncontrol .hidden {
+    visibility: hidden;
+}
+
+
+@media screen and (orientation: portrait) {
+    * {
+        width: auto;
+        height: auto;
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        max-height: 100vh;
+        display: block;
+    }
+
+    main {
+        margin: auto;
+        width: 90vw;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .player {
+        padding: 1rem 0;
+        width: 86vw;
+        height: 40vh;
+        display: grid;
+        grid-template-areas:
+            "payer player ."
+            ". score . "
+            ". current current";
+        grid-template-rows: 6vh auto 12vh;
+    }
+
+    .player h1 {
+        grid-area: score;
+    }
+
+    .player--0 {
+        border-radius: 10px 10px 0 0;
+    }
+
+    .player--1 {
+        border-radius: 0 0 10px 10px;
+    }
+
+    .player h2 {
+        font-size: 2rem;
+    }
+
+
+    .player section {
+        margin: 0 0 0 6rem;
+        padding: 0 12px;
+        width: fit-content;
+        height: fit-content;
+        grid-area: current;
+        align-items: center;
+        display: flex;
+    }
+
+    .btncontrol {
+        left: 0;
+        top: 80%;
+        width: 100%;
+        height: 6vh;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .btncontrol button {
+        margin: 4px;
+        width: 28%;
+        font-size: .8rem;
+
+    }
+
+    .btncontrol img {
+        isolation: isolate;
+        position: absolute;
+        margin: 0;
+        padding: 0;
+        width: 70px;
+        top: -312px;
+        left: 250px;
+
+    }
+}
